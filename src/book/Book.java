@@ -32,6 +32,10 @@ public class Book {
         elements.add(element);
     }
 
+    public void addContentFirst(Element element) {
+        elements.add(0, element);
+    }
+
     public void print() {
         System.out.println("Book: " + title);
         for (Author a : authors) {
