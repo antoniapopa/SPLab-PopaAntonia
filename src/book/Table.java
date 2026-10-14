@@ -7,8 +7,17 @@ public class Table implements Element {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public void print() {
         System.out.println("Table with title: " + title);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

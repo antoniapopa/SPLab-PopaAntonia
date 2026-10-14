@@ -24,4 +24,9 @@ public class Paragraph implements Element {
             alignStrategy.render(this, new Context(40));
         }
     }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+    }
 }

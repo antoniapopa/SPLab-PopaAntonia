@@ -12,6 +12,18 @@ public class Book {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public List<Author> getAuthors() {
+        return authors;
+    }
+
+    public List<Element> getElements() {
+        return elements;
+    }
+
     public void addAuthor(Author author) {
         authors.add(author);
     }
@@ -28,5 +40,9 @@ public class Book {
         for (Element e : elements) {
             e.print();
         }
+    }
+
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 }

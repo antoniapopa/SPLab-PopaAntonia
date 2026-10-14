@@ -11,12 +11,25 @@ public class Section implements Element {
         this.title = title;
     }
 
+    public String getTitle() {
+        return title;
+    }
+
+    public List<Element> getChildren() {
+        return children;
+    }
+
     @Override
     public void print() {
         System.out.println(title);
         for (Element e : children) {
             e.print();
         }
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
     }
 
     @Override
