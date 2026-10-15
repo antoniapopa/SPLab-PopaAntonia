@@ -1,5 +1,4 @@
 package book;
-
 public class Paragraph implements Element {
     private String text;
     private AlignStrategy alignStrategy;
@@ -16,8 +15,7 @@ public class Paragraph implements Element {
         this.alignStrategy = alignStrategy;
     }
 
-    @Override
-    public void print() {
+    public void render() {
         if (alignStrategy == null) {
             System.out.println("Paragraph: " + text);
         } else {

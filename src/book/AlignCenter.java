@@ -1,5 +1,4 @@
 package book;
-
 public class AlignCenter implements AlignStrategy {
     @Override
     public void render(Paragraph paragraph, Context context) {

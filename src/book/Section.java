@@ -1,11 +1,10 @@
 package book;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Section implements Element {
-    private String title;
-    private List<Element> children = new ArrayList<>();
+    protected String title;
+    protected List<Element> children = new ArrayList<>();
 
     public Section(String title) {
         this.title = title;
@@ -15,35 +14,30 @@ public class Section implements Element {
         return title;
     }
 
-    public List<Element> getChildren() {
-        return children;
+    @Override
+    public void add(Element e) {
+        children.add(e);
     }
 
     @Override
-    public void print() {
-        System.out.println(title);
-        for (Element e : children) {
-            e.print();
-        }
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
-    }
-
-    @Override
-    public void add(Element element) {
-        children.add(element);
-    }
-
-    @Override
-    public void remove(Element element) {
-        children.remove(element);
+    public void remove(Element e) {
+        children.remove(e);
     }
 
     @Override
     public Element get(int index) {
         return children.get(index);
+    }
+
+    public void render() {
+        System.out.println(title);
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+        for (Element e : children) {
+            e.accept(visitor);
+        }
     }
 }

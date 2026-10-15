@@ -1,28 +1,17 @@
 package book;
-
 public class BookStatistics implements Visitor {
-    private int books, sections, tocs, paragraphs, images, tables;
+    private int images = 0;
+    private int tables = 0;
+    private int paragraphs = 0;
 
     @Override
-    public void visit(Book book) {
-        books++;
-        for (Element e : book.getElements()) {
-            e.accept(this);
-        }
-    }
+    public void visit(Book book) { }
 
     @Override
-    public void visit(Section section) {
-        sections++;
-        for (Element e : section.getChildren()) {
-            e.accept(this);
-        }
-    }
+    public void visit(Section section) { }
 
     @Override
-    public void visit(TableOfContents toc) {
-        tocs++;
-    }
+    public void visit(TableOfContents toc) { }
 
     @Override
     public void visit(Paragraph paragraph) {
@@ -35,17 +24,19 @@ public class BookStatistics implements Visitor {
     }
 
     @Override
+    public void visit(Image image) {
+        images++;
+    }
+
+    @Override
     public void visit(Table table) {
         tables++;
     }
 
     public void printStatistics() {
-        System.out.println("Book statistics:");
-        System.out.println("  Books: " + books);
-        System.out.println("  Sections: " + sections);
-        System.out.println("  Tables of contents: " + tocs);
-        System.out.println("  Paragraphs: " + paragraphs);
-        System.out.println("  Images: " + images);
-        System.out.println("  Tables: " + tables);
+        System.out.println("Book Statistics:");
+        System.out.println("*** Number of images: " + images);
+        System.out.println("*** Number of tables: " + tables);
+        System.out.println("*** Number of paragraphs: " + paragraphs);
     }
 }

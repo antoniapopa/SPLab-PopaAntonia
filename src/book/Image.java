@@ -1,12 +1,11 @@
 package book;
-
 import java.util.concurrent.TimeUnit;
 
 public class Image implements Element {
     private String url;
 
     public Image(String name) {
-        url = name;
+        this.url = name;
         try {
             TimeUnit.SECONDS.sleep(5);
         } catch (InterruptedException e) {
@@ -14,13 +13,12 @@ public class Image implements Element {
         }
     }
 
-    @Override
-    public void print() {
-        System.out.println("Image with name: " + url);
+    public void render() {
+        System.out.println("Image with name:" + url);
     }
 
     @Override
     public void accept(Visitor visitor) {
-        // Image real nu e vizitat direct; se vizitează ImageProxy
+        visitor.visit(this);
     }
 }

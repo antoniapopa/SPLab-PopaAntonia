@@ -1,15 +1,12 @@
 package book;
-
 public interface Element {
-    void print();
-
     void accept(Visitor visitor);
 
-    default void add(Element element) {
+    default void add(Element e) {
         throw new UnsupportedOperationException();
     }
 
-    default void remove(Element element) {
+    default void remove(Element e) {
         throw new UnsupportedOperationException();
     }
 

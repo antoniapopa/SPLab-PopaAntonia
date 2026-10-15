@@ -1,5 +1,4 @@
 package book;
-
 public class Context {
     private final int width;
 

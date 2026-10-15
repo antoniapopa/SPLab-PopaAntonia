@@ -1,5 +1,4 @@
 package book;
-
 public class Table implements Element {
     private String title;
 
@@ -7,13 +6,8 @@ public class Table implements Element {
         this.title = title;
     }
 
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public void print() {
-        System.out.println("Table with title: " + title);
+    public void render() {
+        System.out.println("Table with title:" + title);
     }
 
     @Override

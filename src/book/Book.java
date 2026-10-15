@@ -1,52 +1,40 @@
 package book;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
-    private String title;
+public class Book extends Section {
     private List<Author> authors = new ArrayList<>();
-    private List<Element> elements = new ArrayList<>();
 
     public Book(String title) {
-        this.title = title;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public List<Author> getAuthors() {
-        return authors;
-    }
-
-    public List<Element> getElements() {
-        return elements;
+        super(title);
     }
 
     public void addAuthor(Author author) {
         authors.add(author);
     }
 
-    public void addContent(Element element) {
-        elements.add(element);
+    public void addContent(Element e) {
+        add(e);
     }
 
-    public void addContentFirst(Element element) {
-        elements.add(0, element);
-    }
-
-    public void print() {
+    @Override
+    public void render() {
         System.out.println("Book: " + title);
+        System.out.println("Authors:");
         for (Author a : authors) {
             a.print();
         }
-        for (Element e : elements) {
-            e.print();
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visit(this);
+        for (Element e : children) {
+            e.accept(visitor);
         }
     }
 
-    public void accept(Visitor visitor) {
-        visitor.visit(this);
+    public void addContentFirst(Element e) {
+        children.add(0, e);
     }
 }

@@ -1,27 +1,21 @@
 package book;
-
 public class ImageProxy implements Element {
     private String url;
-    private Image realImage;
+    private Image realImg;
 
     public ImageProxy(String url) {
         this.url = url;
     }
 
-    public String getUrl() {
-        return url;
-    }
-
     private Image loadImage() {
-        if (realImage == null) {
-            realImage = new Image(url);
+        if (realImg == null) {
+            realImg = new Image(url);
         }
-        return realImage;
+        return realImg;
     }
 
-    @Override
-    public void print() {
-        loadImage().print();
+    public void render() {
+        loadImage().render();
     }
 
     @Override

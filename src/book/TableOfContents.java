@@ -1,5 +1,4 @@
 package book;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,15 +9,10 @@ public class TableOfContents implements Element {
         entries.add(entry);
     }
 
-    public List<String> getEntries() {
-        return entries;
-    }
-
-    @Override
-    public void print() {
+    public void render() {
         System.out.println("Table of Contents");
-        for (String entry : entries) {
-            System.out.println(entry);
+        for (String e : entries) {
+            System.out.println(" - " + e);
         }
     }
 
