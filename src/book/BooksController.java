@@ -12,9 +12,11 @@ import java.util.Map;
 public class BooksController {
 
     private final CrudRepository<Book, Integer> booksRepository;
+    private final AllBooksSubject allBooksSubject;
 
-    public BooksController(CrudRepository<Book, Integer> booksRepository) {
+    public BooksController(CrudRepository<Book, Integer> booksRepository, AllBooksSubject allBooksSubject) {
         this.booksRepository = booksRepository;
+        this.allBooksSubject = allBooksSubject;
     }
 
     private CommandContext newContext() {
@@ -34,6 +36,8 @@ public class BooksController {
     @PostMapping
     public ResponseEntity<Map<String, Integer>> create(@RequestBody BookRequest request) {
         Book book = new CreateBookCommand(newContext().withRequest(request)).execute();
+        // Lab 7: schimbam starea subiectului, care isi notifica observatorii
+        allBooksSubject.add(book);
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of("id", book.getId()));
     }
 
