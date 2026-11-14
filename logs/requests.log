@@ -1,0 +1,31 @@
+2026-11-14T14:37:20.857+02:00  INFO 26444 --- [main] book.MySpringApplication                 : Starting MySpringApplication using Java 21.0.12.1 with PID 26444 (C:\Users\raffp\IdeaProjects\SPLab-PopaAntonia\build\classes\java\main started by raffp in C:\Users\raffp\IdeaProjects\SPLab-PopaAntonia)
+2026-11-14T14:37:20.861+02:00  INFO 26444 --- [main] book.MySpringApplication                 : No active profile set, falling back to 1 default profile: "default"
+2026-11-14T14:37:22.098+02:00  INFO 26444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-14T14:37:22.206+02:00  INFO 26444 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 2 JPA repository interfaces.
+2026-11-14T14:37:23.093+02:00  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2026-11-14T14:37:23.120+02:00  INFO 26444 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-14T14:37:23.121+02:00  INFO 26444 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.31]
+2026-11-14T14:37:23.229+02:00  INFO 26444 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-14T14:37:23.231+02:00  INFO 26444 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2292 ms
+2026-11-14T14:37:23.279+02:00  INFO 26444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-11-14T14:37:23.770+02:00  INFO 26444 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:file:~/h2db/booksdb user=SA
+2026-11-14T14:37:23.775+02:00  INFO 26444 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-11-14T14:37:23.791+02:00  INFO 26444 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:file:~/h2db/booksdb'
+2026-11-14T14:37:24.048+02:00  INFO 26444 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-11-14T14:37:24.196+02:00  INFO 26444 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2026-11-14T14:37:24.272+02:00  INFO 26444 --- [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-11-14T14:37:24.925+02:00  INFO 26444 --- [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-14T14:37:25.025+02:00  WARN 26444 --- [main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-11-14T14:37:27.314+02:00  INFO 26444 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-14T14:37:27.430+02:00  INFO 26444 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-14T14:37:27.922+02:00  WARN 26444 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-11-14T14:37:27.964+02:00  INFO 26444 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [public/index.html]
+2026-11-14T14:37:28.527+02:00  INFO 26444 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2026-11-14T14:37:28.538+02:00  INFO 26444 --- [main] book.MySpringApplication                 : Started MySpringApplication in 8.408 seconds (process running for 9.89)
+2026-11-14T14:37:46.153+02:00  INFO 26444 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-14T14:37:46.154+02:00  INFO 26444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-14T14:37:46.157+02:00  INFO 26444 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-11-14T14:37:46.174+02:00  INFO 26444 --- [http-nio-8080-exec-1] book.RequestLoggingFilter                : --> GET /books
+2026-11-14T14:37:46.566+02:00  INFO 26444 --- [http-nio-8080-exec-1] book.RequestLoggingFilter                : <-- GET /books status=200 (392 ms)
+2026-11-14T14:37:46.642+02:00  INFO 26444 --- [http-nio-8080-exec-2] book.RequestLoggingFilter                : --> GET /favicon.ico
+2026-11-14T14:37:46.663+02:00  INFO 26444 --- [http-nio-8080-exec-2] book.RequestLoggingFilter                : <-- GET /favicon.ico status=404 (21 ms)
