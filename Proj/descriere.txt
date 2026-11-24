@@ -1,0 +1,44 @@
+PROIECT INDIVIDUAL - Restaurant Menu Builder
+Student: Popa Antonia Maria Raffaela
+
+1. Descriere
+Aplicatie web pentru construirea si administrarea meniului unui restaurant.
+Meniul este organizat ca o structura de tip arbore:
+
+    Menu
+     └── Category (ex: Aperitive, Feluri principale, Desert, Bauturi)
+          └── Dish (preparat)
+               ├── Description - descrierea preparatului
+               ├── Dish Photo - fotografia preparatului
+               ├── Allergen Warning - alergenii continuti (gluten, lactoza, oua etc.)
+               └── Price (lei) - pretul
+
+2. Cerinte si cum sunt indeplinite
+- RESTful API using Spring Boot: backend Spring Boot cu endpoint-uri REST
+  pentru meniuri, categorii si preparate.
+- Baza de date: H2 + Spring Data JPA (entitati Menu, Category, Dish).
+- Interfata web: pagina HTML + JavaScript simpla care consuma API-ul.
+- Gestionarea structurii de arbore:
+    <add>     - adaugare meniu, adaugare categorie intr-un meniu,
+                adaugare preparat intr-o categorie
+                POST /menus
+                POST /menus/{id}/categories
+                POST /categories/{id}/dishes
+    <view>    - vizualizarea intregului arbore al unui meniu sau a unui nod
+                GET /menus, GET /menus/{id}, GET /categories/{id}, GET /dishes/{id}
+    <summary> - rezumat al meniului: numar de categorii, numar de preparate
+                pe fiecare categorie, pret minim / maxim / mediu,
+                lista tuturor alergenilor din meniu
+                GET /menus/{id}/summary
+
+3. Sabloane de proiectare folosite
+- Composite - structura arborescenta Menu / Category / Dish
+- Visitor - calcularea rezumatului (summary) prin parcurgerea arborelui
+- Proxy - incarcarea amanata a fotografiilor preparatelor
+- Command - operatiile din controllere
+- Adapter - stratul de persistenta peste repository-urile JPA
+
+4. Organizarea in git
+Commit-uri regulate, cu cate un branch pentru fiecare functionalitate
+(ex: menu-model, menu-add, menu-view, menu-summary, menu-web-ui),
+apoi merge in main.
