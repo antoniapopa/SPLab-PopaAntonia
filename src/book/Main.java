@@ -47,5 +47,23 @@ public class Main {
         BookStatistics bookStats = new BookStatistics();
         book.accept(bookStats);
         bookStats.printStatistics();
+
+
+        System.out.println();
+        System.out.println("--- Test compozitie (Lab 1) ---");
+        Section s1 = new Section("Sectiunea A");
+        Section s2 = new Section("Sectiunea B");
+        Paragraph shared = new Paragraph("Paragraf partajat");
+        s1.add(shared);
+        try {
+            s2.add(shared);
+            System.out.println("EROARE: elementul a fost adaugat in doua sectiuni!");
+        } catch (IllegalStateException ex) {
+            System.out.println("OK, adaugarea a fost respinsa: " + ex.getMessage());
+        }
+
+        s1.remove(shared);
+        s2.add(shared);
+        System.out.println("OK, dupa remove din A, paragraful a fost mutat in B");
     }
 }

@@ -31,6 +31,7 @@ public class Book extends Section {
     }
 
     public void addContentFirst(Element e) {
+        attachChild(e);
         children.add(0, e);
     }
 
